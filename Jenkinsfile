@@ -100,13 +100,9 @@ pipeline {
                     git config user.email "jenkins@local"
                     git config user.name "Jenkins"
                     git remote set-url origin https://${GIT_USER}:${GIT_TOKEN}@github.com/merliariza/todo-list-aws.git
-                    git fetch origin master
+                    git fetch origin
                     git checkout master
-                    git checkout develop -- Jenkinsfile
-                    git checkout develop -- Jenkinsfile_agentes
-                    git add Jenkinsfile Jenkinsfile_agentes
-                    git commit -m "Sync Jenkinsfiles from develop" --allow-empty
-                    git merge origin/develop --no-edit -X ours
+                    git merge origin/develop --no-edit -X theirs
                     git push origin master
                     '''
                 }
