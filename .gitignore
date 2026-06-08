@@ -5,3 +5,14 @@ tests
 pyenvunittests
 .coverage
 coverage.xml
+aws/
+sam-installation/
+*.zip
+
+.aws-sam/
+
+__pycache__/
+*.pyc
+
+reports/
+

@@ -2,8 +2,9 @@ import json
 import logging
 import todoList
 
-
 def create(event, context):
+    logging.error("EVENTO RECIBIDO:")
+    logging.error(json.dumps(event))
     data = json.loads(event['body'])
     if 'text' not in data:
         logging.error("Validation failed")
