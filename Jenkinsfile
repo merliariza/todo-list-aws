@@ -42,7 +42,7 @@ pipeline {
                     def baseUrl = sh(
                         script: '''
                             aws cloudformation describe-stacks \
-                                --stack-name production-todo-list-aws \
+                                --stack-name todo-list-aws-production \
                                 --query 'Stacks[0].Outputs[?OutputKey==`BaseUrlApi`].OutputValue' \
                                 --output text
                         ''',
