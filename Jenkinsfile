@@ -1,13 +1,14 @@
 pipeline {
-    agent any
+    agent none
     options {
         timestamps()
     }
     environment {
-        PATH = "/var/lib/jenkins/.local/bin:${env.PATH}"
+        PATH = "/var/lib/jenkins/.local/bin:/usr/local/bin:/usr/bin:/bin"
     }
     stages {
         stage('Get Code') {
+            agent any
             steps {
                 checkout([
                     $class: 'GitSCM',
@@ -20,9 +21,11 @@ pipeline {
                 git branch
                 git status
                 '''
+                stash name: 'source-code', includes: '**/*'
             }
         }
         stage('Install Dependencies') {
+            agent { label 'static-agent' }
             steps {
                 sh '''
                 pip3 install --break-system-packages flake8 bandit pytest requests
@@ -30,33 +33,32 @@ pipeline {
             }
         }
         stage('Static Test') {
+            agent { label 'static-agent' }
             steps {
+                unstash 'source-code'
                 sh '''
                 mkdir -p reports
                 flake8 src --tee --output-file reports/flake8-report.txt || true
                 bandit -r src -f txt -o reports/bandit-report.txt || true
                 '''
+                stash name: 'reports', includes: 'reports/*'
             }
         }
         stage('Deploy') {
+            agent any
             steps {
-                sh '''
-                sam build
-                sam validate
-                sam deploy \
-                    --config-env staging \
-                    --no-confirm-changeset \
-                    --no-fail-on-empty-changeset \
-                    --resolve-s3 \
-                    --s3-bucket ""
-                '''
-            }
-        }
-        stage('Rest Test') {
-            steps {
+                unstash 'source-code'
                 script {
-                    def baseUrl = sh(
+                    env.BASE_URL = sh(
                         script: '''
+                            sam build
+                            sam validate
+                            sam deploy \
+                                --config-env staging \
+                                --no-confirm-changeset \
+                                --no-fail-on-empty-changeset \
+                                --resolve-s3 \
+                                --s3-bucket ""
                             aws cloudformation describe-stacks \
                                 --stack-name staging-todo-list-aws \
                                 --query 'Stacks[0].Outputs[?OutputKey==`BaseUrlApi`].OutputValue' \
@@ -64,15 +66,26 @@ pipeline {
                         ''',
                         returnStdout: true
                     ).trim()
-                    echo "BASE_URL capturada: ${baseUrl}"
-                    withEnv(["BASE_URL=${baseUrl}"]) {
-                        sh 'pytest test/integration/todoApiTest.py -v'
-                    }
+                    echo "BASE_URL capturada: ${env.BASE_URL}"
+                }
+            }
+        }
+        stage('Rest Test') {
+            agent { label 'test-agent' }
+            steps {
+                unstash 'source-code'
+                sh '''
+                pip3 install --break-system-packages pytest requests
+                '''
+                withEnv(["BASE_URL=${env.BASE_URL}"]) {
+                    sh 'pytest test/integration/todoApiTest.py -v'
                 }
             }
         }
         stage('Promote') {
+            agent any
             steps {
+                unstash 'source-code'
                 withCredentials([usernamePassword(
                     credentialsId: 'github-credentials',
                     usernameVariable: 'GIT_USER',
@@ -93,7 +106,10 @@ pipeline {
     }
     post {
         always {
-            archiveArtifacts artifacts: 'reports/*', allowEmptyArchive: true
+            node('any') {
+                unstash 'reports'
+                archiveArtifacts artifacts: 'reports/*', allowEmptyArchive: true
+            }
         }
         success {
             echo 'Pipeline ejecutado correctamente'
