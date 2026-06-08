@@ -1,0 +1,85 @@
+pipeline {
+    agent none
+    options {
+        timestamps()
+    }
+    stages {
+        stage('Get Code') {
+            agent any
+            environment {
+                PATH = "/var/lib/jenkins/.local/bin:${env.PATH}"
+            }
+            steps {
+                checkout([
+                    $class: 'GitSCM',
+                    branches: [[name: '*/master']],
+                    userRemoteConfigs: [[
+                        url: 'https://github.com/merliariza/todo-list-aws.git'
+                    ]]
+                ])
+                sh '''
+                git branch
+                git status
+                '''
+                stash name: 'source-code', includes: '**/*'
+            }
+        }
+        stage('Deploy') {
+            agent any
+            environment {
+                PATH = "/var/lib/jenkins/.local/bin:${env.PATH}"
+            }
+            steps {
+                unstash 'source-code'
+                script {
+                    sh '''
+                    sam build
+                    sam validate
+                    sam deploy \
+                        --config-env production \
+                        --no-confirm-changeset \
+                        --no-fail-on-empty-changeset \
+                        --resolve-s3 \
+                        --s3-bucket ""
+                    '''
+                    env.BASE_URL = sh(
+                        script: '''
+                            aws cloudformation describe-stacks \
+                                --stack-name todo-list-aws-production \
+                                --query 'Stacks[0].Outputs[?OutputKey==`BaseUrlApi`].OutputValue' \
+                                --output text
+                        ''',
+                        returnStdout: true
+                    ).trim()
+                    echo "BASE_URL capturada: ${env.BASE_URL}"
+                }
+            }
+        }
+        stage('Rest Test') {
+            agent { label 'test-agent' }
+            environment {
+                PATH = "/var/lib/jenkins/.local/bin:${env.PATH}"
+            }
+            steps {
+                unstash 'source-code'
+                sh 'pip3 install --break-system-packages pytest requests'
+                withEnv(["BASE_URL=${env.BASE_URL}"]) {
+                    sh 'pytest test/integration/todoApiTest.py -v -k "listtodos"'
+                }
+            }
+        }
+    }
+    post {
+        always {
+            node('built-in') {
+                archiveArtifacts artifacts: 'reports/*', allowEmptyArchive: true
+            }
+        }
+        success {
+            echo 'Pipeline ejecutado correctamente'
+        }
+        failure {
+            echo 'Pipeline fallido'
+        }
+    }
+}
