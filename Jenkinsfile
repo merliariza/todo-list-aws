@@ -25,7 +25,7 @@ pipeline {
             }
         }
         stage('Static Test') {
-            agent { label 'static-agent' }
+            agent any
             environment {
                 PATH = "/var/lib/jenkins/.local/bin:${env.PATH}"
             }
@@ -72,7 +72,7 @@ pipeline {
             }
         }
         stage('Rest Test') {
-            agent { label 'test-agent' }
+            agent any
             environment {
                 PATH = "/var/lib/jenkins/.local/bin:${env.PATH}"
             }
