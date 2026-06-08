@@ -162,4 +162,687 @@ warning: There are too many unreachable loose objects; run 'git prune' to remove
 
 [develop 63395f8] Fix path and sam deployment
  1 file changed, 2 insertions(+), 2 deletions(-)
-[?
+[?2004hubuntu@ip-172-31-44-229:~/todo-list-aws$ git push
+[?2004lUsername for 'https://github.com': merliariza
+Password for 'https://merliariza@github.com': 
+Enumerating objects: 5, done.
+Counting objects:  20% (1/5)Counting objects:  40% (2/5)Counting objects:  60% (3/5)Counting objects:  80% (4/5)Counting objects: 100% (5/5)Counting objects: 100% (5/5), done.
+Delta compression using up to 2 threads
+Compressing objects:  33% (1/3)Compressing objects:  66% (2/3)Compressing objects: 100% (3/3)Compressing objects: 100% (3/3), done.
+Writing objects:  33% (1/3)Writing objects:  66% (2/3)Writing objects: 100% (3/3)Writing objects: 100% (3/3), 373 bytes | 373.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas:   0% (0/2)[Kremote: Resolving deltas:  50% (1/2)[Kremote: Resolving deltas: 100% (2/2)[Kremote: Resolving deltas: 100% (2/2), completed with 2 local objects.[K
+To https://github.com/merliariza/todo-list-aws.git
+   c95a990..63395f8  develop -> develop
+[?2004hubuntu@ip-172-31-44-229:~/todo-list-aws$ git pushcommit -m "Fix path and sam deployment"add .[K
+[?2004l[?2004hubuntu@ip-172-31-44-229:~/todo-list-aws$ git add .[1Ppushcommit -m "Fix path and sam deployment"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"s"a"m"c"o"n"f"i"g"
+[?2004lAuto packing the repository in background for optimum performance.
+See "git help gc" for manual housekeeping.
+warning: The last gc run reported the following. Please correct the root cause
+and remove .git/gc.log
+Automatic cleanup will not be performed until the file is removed.
+
+warning: There are too many unreachable loose objects; run 'git prune' to remove them.
+
+[develop 2ac24c4] Fix samconfig
+ 2 files changed, 52 insertions(+), 2 deletions(-)
+[?2004hubuntu@ip-172-31-44-229:~/todo-list-aws$ git psuh
+[?2004lgit: 'psuh' is not a git command. See 'git --help'.
+
+The most similar command is
+	push
+[?2004hubuntu@ip-172-31-44-229:~/todo-list-aws$ git psuh[K[K[Kush
+[?2004lUsername for 'https://github.com': merliza  ariza
+Password for 'https://merliariza@github.com': 
+Enumerating objects: 7, done.
+Counting objects:  14% (1/7)Counting objects:  28% (2/7)Counting objects:  42% (3/7)Counting objects:  57% (4/7)Counting objects:  71% (5/7)Counting objects:  85% (6/7)Counting objects: 100% (7/7)Counting objects: 100% (7/7), done.
+Delta compression using up to 2 threads
+Compressing objects:  25% (1/4)Compressing objects:  50% (2/4)Compressing objects:  75% (3/4)Compressing objects: 100% (4/4)Compressing objects: 100% (4/4), done.
+Writing objects:  25% (1/4)Writing objects:  50% (2/4)Writing objects:  75% (3/4)Writing objects: 100% (4/4)Writing objects: 100% (4/4), 1.16 KiB | 1.16 MiB/s, done.
+Total 4 (delta 3), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas:   0% (0/3)[Kremote: Resolving deltas:  33% (1/3)[Kremote: Resolving deltas:  66% (2/3)[Kremote: Resolving deltas: 100% (3/3)[Kremote: Resolving deltas: 100% (3/3), completed with 3 local objects.[K
+To https://github.com/merliariza/todo-list-aws.git
+   63395f8..2ac24c4  develop -> develop
+[?2004hubuntu@ip-172-31-44-229:~/todo-list-aws$ g[Kaws cloudformation describe-stacks --stack-name staging-todo-list-aws
+[?2004l[?1h={[m
+    "Stacks": [[m
+        {[m
+            "StackId": "arn:aws:cloudformation:us-east-1:351390126172:stack/staging-todo-list-aws/7b2a4f10-62e1-11f1-b44f-0e3d476d0fa5",[m
+            "StackName": "staging-todo-list-aws",[m
+            "ChangeSetId": "arn:aws:cloudformation:us-east-1:351390126172:changeSet/samcli-deploy1780896196/f7728d35-b649-411c-a402-fd0a4940cd88",[m
+            "Description": "todo-list-aws\nApplication TODO-LIST with SAM format\n",[m
+            "Parameters": [[m
+                {[m
+                    "ParameterKey": "Stage",[m
+                    "ParameterValue": "staging"[m
+                }[m
+            ],[m
+            "CreationTime": "2026-06-08T02:26:40.024000+00:00",[m
+            "LastUpdatedTime": "2026-06-08T05:23:27.078000+00:00",[m
+            "RollbackConfiguration": {},[m
+            "StackStatus": "UPDATE_COMPLETE",[m
+            "DisableRollback": false,[m
+            "NotificationARNs": [],[m
+            "Capabilities": [[m
+                "CAPABILITY_IAM"[m
+            ],[m
+            "Outputs": [[m
+                {[m
+                    "OutputKey": "BaseUrlApi",[m
+                    "OutputValue": "https://mpw35g6ad5.execute-api.us-east-1.amazonaws.com/Prod",[m
+                    "Description": "Base URL of API"[m
+                },[m
+                {[m
+                    "OutputKey": "DeleteTodoApi",[m
+                    "OutputValue": "https://mpw35g6ad5.execute-api.us-east-1.amazonaws.com/Prod/todos/{id}",[m
+                    "Description": "API Gateway endpoint URL for ${opt:stage} stage for Delete TODO"[m
+                },[m
+                {[m
+                    "OutputKey": "ListTodosApi",[m
+                    "OutputValue": "https://mpw35g6ad5.execute-api.us-east-1.amazonaws.com/Prod/todos",[m
+:[K[K                    "Description": "API Gateway endpoint URL for ${opt:stage} stage for List TODO"[m
+:[K[K                },[m
+:[K[K                {[m
+:[K[K                    "OutputKey": "UpdateTodoApi",[m
+:[K[K                    "OutputValue": "https://mpw35g6ad5.execute-api.us-east-1.amazonaws.com/Prod/todos/{id}",[m
+:[K[K                    "Description": "API Gateway endpoint URL for ${opt:stage} stage for Update TODO"[m
+:[K[K                },[m
+:[K[K                {[m
+:[K[K                    "OutputKey": "GetTodoApi",[m
+:[K[K                    "OutputValue": "https://mpw35g6ad5.execute-api.us-east-1.amazonaws.com/Prod/todos/{id}",[m
+:[K[K                    "Description": "API Gateway endpoint URL for ${opt:stage} stage for Get TODO"[m
+:[K[K                },[m
+:[K[K                {[m
+:[K[K                    "OutputKey": "CreateTodoApi",[m
+:[K[K                    "OutputValue": "https://mpw35g6ad5.execute-api.us-east-1.amazonaws.com/Prod/todos/",[m
+:[K[K                    "Description": "API Gateway endpoint URL for ${opt:stage} stage for Create TODO"[m
+:[K[K                }[m
+:[K[K            ],[m
+:[K[K            "Tags": [],[m
+:[K[K            "EnableTerminationProtection": false,[m
+:[K[K            "DriftInformation": {[m
+:[K[K                "StackDriftStatus": "NOT_CHECKED"[m
+:[K[K            },[m
+:[K[K            "LastOperations": [[m
+:[K[K                {[m
+:[K[K                    "OperationType": "UPDATE_STACK",[m
+:[K[K                    "OperationId": "70e81283-9e1f-4d45-92ca-82d37d8e3723"[m
+:[K[K                }[m
+:[K[K            ][m
+:[K[K        }[m
+:[K[K    ][m
+:[K[K}[m
+:[K[K[K[3m(END)[23m[K[K[K[3m(END)[23m[K[K[K[3m(END)[23m[K[K[K[3m(END)[23m[K[K[K[3m(END)[23m[K[K[K[3m(END)[23m[K[K[K[3m(END)[23m[K[K[K[3m(END)[23m[K[K[K[3m(END)[23m[K[K[K[3m(END)[23m[K[K[K[3m(END)[23m[K[K[K[3m(END)[23m[K[K[K[3m(END)[23m[K[K[K[3m(END)[23m[K[K[K[3m(END)[23m[K[K[K[3m(END)[23m[K[K[K[3m(END)[23m[K[K[K[3m(END)[23m[K[K[K[3m(END)[23m[K[K [KESCESC[KOO[KAA[K[HM                    "Description": "API Gateway endpoint URL for ${opt:stage} stage for Delete TODO"[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM                    "OutputValue": "https://mpw35g6ad5.execute-api.us-east-1.amazonaws.com/Prod/todos/{id}",[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM                    "OutputKey": "DeleteTodoApi",[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM                {[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM                },[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM                    "Description": "Base URL of API"[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM                    "OutputValue": "https://mpw35g6ad5.execute-api.us-east-1.amazonaws.com/Prod",[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM                    "OutputKey": "BaseUrlApi",[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM                {[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM            "Outputs": [[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM            ],[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM                "CAPABILITY_IAM"[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM            "Capabilities": [[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM            "NotificationARNs": [],[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM            "DisableRollback": false,[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM            "StackStatus": "UPDATE_COMPLETE",[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM            "RollbackConfiguration": {},[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM            "LastUpdatedTime": "2026-06-08T05:23:27.078000+00:00",[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM            "CreationTime": "2026-06-08T02:26:40.024000+00:00",[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM            ],[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM                }[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM                    "ParameterValue": "staging"[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM                    "ParameterKey": "Stage",[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM                {[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM            "Parameters": [[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM            "Description": "todo-list-aws\nApplication TODO-LIST with SAM format\n",[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM            "ChangeSetId": "arn:aws:cloudformation:us-east-1:351390126172:changeSet/samcli-deploy1780896196/f7728d35-b649-411c-a402-fd0a4940cd88",[m
+[37;1H[K:[K[K [KESCESC[KOO[KBB[K                    "Description": "API Gateway endpoint URL for ${opt:stage} stage for Update TODO"[m
+:[K[K [KESCESC[KOO[KBB[K                },[m
+:[K[K [KESCESC[KOO[KBB[K                {[m
+:[K[K [KESCESC[KOO[KAA[K[HM            "Parameters": [[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM            "Description": "todo-list-aws\nApplication TODO-LIST with SAM format\n",[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM            "ChangeSetId": "arn:aws:cloudformation:us-east-1:351390126172:changeSet/samcli-deploy1780896196/f7728d35-b649-411c-a402-fd0a4940cd88",[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM            "StackName": "staging-todo-list-aws",[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM            "StackId": "arn:aws:cloudformation:us-east-1:351390126172:stack/staging-todo-list-aws/7b2a4f10-62e1-11f1-b44f-0e3d476d0fa5",[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM        {[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM    "Stacks": [[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM{[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KBB[K                    "Description": "API Gateway endpoint URL for ${opt:stage} stage for List TODO"[m
+:[K[K [KESCESC[KOO[KBB[K                },[m
+:[K[K [KESCESC[KOO[KBB[K                {[m
+:[K[K [KESCESC[KOO[KAA[K[HM        {[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM    "Stacks": [[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM{[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KBB[K                    "Description": "API Gateway endpoint URL for ${opt:stage} stage for List TODO"[m
+:[K[K [KESCESC[KOO[KBB[K                },[m
+:[K[K [KESCESC[KOO[KBB[K                {[m
+:[K[K [KESCESC[KOO[KAA[K[HM        {[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM    "Stacks": [[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM{[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KBB[K                    "Description": "API Gateway endpoint URL for ${opt:stage} stage for List TODO"[m
+:[K[K [KESCESC[KOO[KBB[K                },[m
+:[K[K [KESCESC[KOO[KBB[K                {[m
+:[K[K [KESCESC[KOO[KAA[K[HM        {[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM    "Stacks": [[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM{[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KBB[K                    "Description": "API Gateway endpoint URL for ${opt:stage} stage for List TODO"[m
+:[K[K [KESCESC[KOO[KBB[K                },[m
+:[K[K [KESCESC[KOO[KBB[K                {[m
+:[K[K [KESCESC[KOO[KAA[K[HM        {[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM    "Stacks": [[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM{[m
+[37;1H[K:[K[K [KESCESC[KOO[KBB[K                    "Description": "API Gateway endpoint URL for ${opt:stage} stage for List TODO"[m
+:[K[K [KESCESC[KOO[KBB[K                },[m
+:[K[K [KESCESC[KOO[KBB[K                {[m
+:[K[K [KESCESC[KOO[KBB[K                    "OutputKey": "UpdateTodoApi",[m
+:[K[K [KESCESC[KOO[KBB[K                    "OutputValue": "https://mpw35g6ad5.execute-api.us-east-1.amazonaws.com/Prod/todos/{id}",[m
+:[K[K [KESCESC[KOO[KBB[K                    "Description": "API Gateway endpoint URL for ${opt:stage} stage for Update TODO"[m
+:[K[K [KESCESC[KOO[KBB[K                },[m
+:[K[K [KESCESC[KOO[KBB[K                {[m
+:[K[K [KESCESC[KOO[KBB[K                    "OutputKey": "GetTodoApi",[m
+:[K[K [KESCESC[KOO[KBB[K                    "OutputValue": "https://mpw35g6ad5.execute-api.us-east-1.amazonaws.com/Prod/todos/{id}",[m
+:[K[K [KESCESC[KOO[KBB[K                    "Description": "API Gateway endpoint URL for ${opt:stage} stage for Get TODO"[m
+:[K[K [KESCESC[KOO[KBB[K                },[m
+:[K[K [KESCESC[KOO[KBB[K                {[m
+:[K[K [KESCESC[KOO[KBB[K                    "OutputKey": "CreateTodoApi",[m
+:[K[K [KESCESC[KOO[KBB[K                    "OutputValue": "https://mpw35g6ad5.execute-api.us-east-1.amazonaws.com/Prod/todos/",[m
+:[K[K [KESCESC[KOO[KBB[K                    "Description": "API Gateway endpoint URL for ${opt:stage} stage for Create TODO"[m
+:[K[K [KESCESC[KOO[KBB[K                }[m
+:[K[K [KESCESC[KOO[KBB[K            ],[m
+:[K[K [KESCESC[KOO[KBB[K            "Tags": [],[m
+:[K[K [KESCESC[KOO[KBB[K            "EnableTerminationProtection": false,[m
+:[K[K [KESCESC[KOO[KBB[K            "DriftInformation": {[m
+:[K[K [KESCESC[KOO[KBB[K                "StackDriftStatus": "NOT_CHECKED"[m
+:[K[K [KESCESC[KOO[KBB[K            },[m
+:[K[K [KESCESC[KOO[KBB[K            "LastOperations": [[m
+:[K[K [KESCESC[KOO[KBB[K                {[m
+:[K[K [KESCESC[KOO[KBB[K                    "OperationType": "UPDATE_STACK",[m
+:[K[K [KESCESC[KOO[KBB[K                    "OperationId": "70e81283-9e1f-4d45-92ca-82d37d8e3723"[m
+:[K[K [KESCESC[KOO[KBB[K                }[m
+:[K[K [KESCESC[KOO[KBB[K            ][m
+:[K[K [KESCESC[KOO[KBB[K        }[m
+:[K[K [KESCESC[KOO[KBB[K    ][m
+:[K[K [KESCESC[KOO[KBB[K}[m
+[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KAA[K[HM                    "Description": "API Gateway endpoint URL for ${opt:stage} stage for Delete TODO"[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM                    "OutputValue": "https://mpw35g6ad5.execute-api.us-east-1.amazonaws.com/Prod/todos/{id}",[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM                    "OutputKey": "DeleteTodoApi",[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM                {[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM                },[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM                    "Description": "Base URL of API"[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM                    "OutputValue": "https://mpw35g6ad5.execute-api.us-east-1.amazonaws.com/Prod",[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM                    "OutputKey": "BaseUrlApi",[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM                {[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM            "Outputs": [[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM            ],[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM                "CAPABILITY_IAM"[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM            "Capabilities": [[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM            "NotificationARNs": [],[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM            "DisableRollback": false,[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM            "StackStatus": "UPDATE_COMPLETE",[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM            "RollbackConfiguration": {},[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM            "LastUpdatedTime": "2026-06-08T05:23:27.078000+00:00",[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM            "CreationTime": "2026-06-08T02:26:40.024000+00:00",[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM            ],[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM                }[m
+[37;1H[K:[K[K:[K[K [KESCESC[KOO[KBB[K                },[m
+:[K[K [KESCESC[KOO[KBB[K                {[m
+:[K[K [KESCESC[KOO[KBB[K                    "OutputKey": "CreateTodoApi",[m
+:[K[K [KESCESC[KOO[KBB[K                    "OutputValue": "https://mpw35g6ad5.execute-api.us-east-1.amazonaws.com/Prod/todos/",[m
+:[K[K [KESCESC[KOO[KBB[K                    "Description": "API Gateway endpoint URL for ${opt:stage} stage for Create TODO"[m
+:[K[K [KESCESC[KOO[KBB[K                }[m
+:[K[K [KESCESC[KOO[KBB[K            ],[m
+:[K[K [KESCESC[KOO[KBB[K            "Tags": [],[m
+:[K[K [KESCESC[KOO[KBB[K            "EnableTerminationProtection": false,[m
+:[K[K [KESCESC[KOO[KBB[K            "DriftInformation": {[m
+:[K[K [KESCESC[KOO[KBB[K                "StackDriftStatus": "NOT_CHECKED"[m
+:[K[K [KESCESC[KOO[KBB[K            },[m
+:[K[K [KESCESC[KOO[KBB[K            "LastOperations": [[m
+:[K[K [KESCESC[KOO[KBB[K                {[m
+:[K[K [KESCESC[KOO[KBB[K                    "OperationType": "UPDATE_STACK",[m
+:[K[K [KESCESC[KOO[KBB[K                    "OperationId": "70e81283-9e1f-4d45-92ca-82d37d8e3723"[m
+:[K[K [KESCESC[KOO[KBB[K                }[m
+:[K[K [KESCESC[KOO[KBB[K            ][m
+:[K[K [KESCESC[KOO[KBB[K        }[m
+:[K[K [KESCESC[KOO[KBB[K    ][m
+:[K[K [KESCESC[KOO[KBB[K}[m
+[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KAA[K[HM                    "Description": "API Gateway endpoint URL for ${opt:stage} stage for Delete TODO"[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM                    "OutputValue": "https://mpw35g6ad5.execute-api.us-east-1.amazonaws.com/Prod/todos/{id}",[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM                    "OutputKey": "DeleteTodoApi",[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM                {[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM                },[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM                    "Description": "Base URL of API"[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM                    "OutputValue": "https://mpw35g6ad5.execute-api.us-east-1.amazonaws.com/Prod",[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM                    "OutputKey": "BaseUrlApi",[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM                {[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM            "Outputs": [[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM            ],[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM                "CAPABILITY_IAM"[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM            "Capabilities": [[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM            "NotificationARNs": [],[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM            "DisableRollback": false,[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM            "StackStatus": "UPDATE_COMPLETE",[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM            "RollbackConfiguration": {},[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM            "LastUpdatedTime": "2026-06-08T05:23:27.078000+00:00",[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM            "CreationTime": "2026-06-08T02:26:40.024000+00:00",[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM            ],[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM                }[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM                    "ParameterValue": "staging"[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM                    "ParameterKey": "Stage",[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM                {[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM            "Parameters": [[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM            "Description": "todo-list-aws\nApplication TODO-LIST with SAM format\n",[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM            "ChangeSetId": "arn:aws:cloudformation:us-east-1:351390126172:changeSet/samcli-deploy1780896196/f7728d35-b649-411c-a402-fd0a4940cd88",[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM            "StackName": "staging-todo-list-aws",[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM            "StackId": "arn:aws:cloudformation:us-east-1:351390126172:stack/staging-todo-list-aws/7b2a4f10-62e1-11f1-b44f-0e3d476d0fa5",[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM        {[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM    "Stacks": [[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM{[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KBB[K                    "Description": "API Gateway endpoint URL for ${opt:stage} stage for List TODO"[m
+:[K[K [KESCESC[KOO[KBB[K                },[m
+:[K[K [KESCESC[KOO[KBB[K                {[m
+:[K[K [KESCESC[KOO[KBB[K                    "OutputKey": "UpdateTodoApi",[m
+:[K[K [KESCESC[KOO[KBB[K                    "OutputValue": "https://mpw35g6ad5.execute-api.us-east-1.amazonaws.com/Prod/todos/{id}",[m
+:[K[K [KESCESC[KOO[KBB[K                    "Description": "API Gateway endpoint URL for ${opt:stage} stage for Update TODO"[m
+:[K[K [KESCESC[KOO[KAA[K[HM            "ChangeSetId": "arn:aws:cloudformation:us-east-1:351390126172:changeSet/samcli-deploy1780896196/f7728d35-b649-411c-a402-fd0a4940cd88",[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM            "StackName": "staging-todo-list-aws",[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM            "StackId": "arn:aws:cloudformation:us-east-1:351390126172:stack/staging-todo-list-aws/7b2a4f10-62e1-11f1-b44f-0e3d476d0fa5",[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM        {[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM    "Stacks": [[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM{[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KBB[K                    "Description": "API Gateway endpoint URL for ${opt:stage} stage for List TODO"[m
+:[K[K [KESCESC[KOO[KBB[K                },[m
+:[K[K [KESCESC[KOO[KBB[K                {[m
+:[K[K [KESCESC[KOO[KAA[K[HM        {[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM    "Stacks": [[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM{[m
+[37;1H[K:[K[K [KESCESC[KOO[KBB[K                    "Description": "API Gateway endpoint URL for ${opt:stage} stage for List TODO"[m
+:[K[K [KESCESC[KOO[KBB[K                },[m
+:[K[K [KESCESC[KOO[KBB[K                {[m
+:[K[K [KESCESC[KOO[KBB[K                    "OutputKey": "UpdateTodoApi",[m
+:[K[K [KESCESC[KOO[KBB[K                    "OutputValue": "https://mpw35g6ad5.execute-api.us-east-1.amazonaws.com/Prod/todos/{id}",[m
+:[K[K [KESCESC[KOO[KBB[K                    "Description": "API Gateway endpoint URL for ${opt:stage} stage for Update TODO"[m
+:[K[K [KESCESC[KOO[KBB[K                },[m
+:[K[K [KESCESC[KOO[KBB[K                {[m
+:[K[K [KESCESC[KOO[KBB[K                    "OutputKey": "GetTodoApi",[m
+:[K[K [KESCESC[KOO[KBB[K                    "OutputValue": "https://mpw35g6ad5.execute-api.us-east-1.amazonaws.com/Prod/todos/{id}",[m
+:[K[K [KESCESC[KOO[KBB[K                    "Description": "API Gateway endpoint URL for ${opt:stage} stage for Get TODO"[m
+:[K[K [KESCESC[KOO[KBB[K                },[m
+:[K[K [KESCESC[KOO[KBB[K                {[m
+:[K[K [KESCESC[KOO[KBB[K                    "OutputKey": "CreateTodoApi",[m
+:[K[K [KESCESC[KOO[KBB[K                    "OutputValue": "https://mpw35g6ad5.execute-api.us-east-1.amazonaws.com/Prod/todos/",[m
+:[K[K [KESCESC[KOO[KBB[K                    "Description": "API Gateway endpoint URL for ${opt:stage} stage for Create TODO"[m
+:[K[K [KESCESC[KOO[KBB[K                }[m
+:[K[K [KESCESC[KOO[KBB[K            ],[m
+:[K[K [KESCESC[KOO[KBB[K            "Tags": [],[m
+:[K[K [KESCESC[KOO[KBB[K            "EnableTerminationProtection": false,[m
+:[K[K [KESCESC[KOO[KBB[K            "DriftInformation": {[m
+:[K[K [KESCESC[KOO[KBB[K                "StackDriftStatus": "NOT_CHECKED"[m
+:[K[K [KESCESC[KOO[KBB[K            },[m
+:[K[K [KESCESC[KOO[KBB[K            "LastOperations": [[m
+:[K[K [KESCESC[KOO[KBB[K                {[m
+:[K[K [KESCESC[KOO[KBB[K                    "OperationType": "UPDATE_STACK",[m
+:[K[K [KESCESC[KOO[KBB[K                    "OperationId": "70e81283-9e1f-4d45-92ca-82d37d8e3723"[m
+:[K[K [KESCESC[KOO[KBB[K                }[m
+:[K[K [KESCESC[KOO[KBB[K            ][m
+:[K[K [KESCESC[KOO[KBB[K        }[m
+:[K[K [KESCESC[KOO[KBB[K    ][m
+:[K[K [KESCESC[KOO[KBB[K}[m
+[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KAA[K[HM                    "Description": "API Gateway endpoint URL for ${opt:stage} stage for Delete TODO"[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM                    "OutputValue": "https://mpw35g6ad5.execute-api.us-east-1.amazonaws.com/Prod/todos/{id}",[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM                    "OutputKey": "DeleteTodoApi",[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM                {[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM                },[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM                    "Description": "Base URL of API"[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM                    "OutputValue": "https://mpw35g6ad5.execute-api.us-east-1.amazonaws.com/Prod",[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM                    "OutputKey": "BaseUrlApi",[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM                {[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM            "Outputs": [[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM            ],[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM                "CAPABILITY_IAM"[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM            "Capabilities": [[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM            "NotificationARNs": [],[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM            "DisableRollback": false,[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM            "StackStatus": "UPDATE_COMPLETE",[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM            "RollbackConfiguration": {},[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM            "LastUpdatedTime": "2026-06-08T05:23:27.078000+00:00",[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM            "CreationTime": "2026-06-08T02:26:40.024000+00:00",[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM            ],[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM                }[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM                    "ParameterValue": "staging"[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM                    "ParameterKey": "Stage",[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM                {[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM            "Parameters": [[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM            "Description": "todo-list-aws\nApplication TODO-LIST with SAM format\n",[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM            "ChangeSetId": "arn:aws:cloudformation:us-east-1:351390126172:changeSet/samcli-deploy1780896196/f7728d35-b649-411c-a402-fd0a4940cd88",[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM            "StackName": "staging-todo-list-aws",[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM            "StackId": "arn:aws:cloudformation:us-east-1:351390126172:stack/staging-todo-list-aws/7b2a4f10-62e1-11f1-b44f-0e3d476d0fa5",[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM        {[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM    "Stacks": [[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM{[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KBB[K                    "Description": "API Gateway endpoint URL for ${opt:stage} stage for List TODO"[m
+:[K[K [KESCESC[KOO[KBB[K                },[m
+:[K[K [KESCESC[KOO[KBB[K                {[m
+:[K[K [KESCESC[KOO[KAA[K[HM        {[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM    "Stacks": [[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM{[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KBB[K                    "Description": "API Gateway endpoint URL for ${opt:stage} stage for List TODO"[m
+:[K[K [KESCESC[KOO[KBB[K                },[m
+:[K[K [KESCESC[KOO[KBB[K                {[m
+:[K[K [KESCESC[KOO[KBB[K                    "OutputKey": "UpdateTodoApi",[m
+:[K[K [KESCESC[KOO[KBB[K                    "OutputValue": "https://mpw35g6ad5.execute-api.us-east-1.amazonaws.com/Prod/todos/{id}",[m
+:[K[K [KESCESC[KOO[KBB[K                    "Description": "API Gateway endpoint URL for ${opt:stage} stage for Update TODO"[m
+:[K[K [KESCESC[KOO[KBB[K                },[m
+:[K[K [KESCESC[KOO[KBB[K                {[m
+:[K[K [KESCESC[KOO[KBB[K                    "OutputKey": "GetTodoApi",[m
+:[K[K [KESCESC[KOO[KBB[K                    "OutputValue": "https://mpw35g6ad5.execute-api.us-east-1.amazonaws.com/Prod/todos/{id}",[m
+:[K[K [KESCESC[KOO[KBB[K                    "Description": "API Gateway endpoint URL for ${opt:stage} stage for Get TODO"[m
+:[K[K [KESCESC[KOO[KBB[K                },[m
+:[K[K [KESCESC[KOO[KBB[K                {[m
+:[K[K [KESCESC[KOO[KBB[K                    "OutputKey": "CreateTodoApi",[m
+:[K[K [KESCESC[KOO[KBB[K                    "OutputValue": "https://mpw35g6ad5.execute-api.us-east-1.amazonaws.com/Prod/todos/",[m
+:[K[K [KESCESC[KOO[KBB[K                    "Description": "API Gateway endpoint URL for ${opt:stage} stage for Create TODO"[m
+:[K[K [KESCESC[KOO[KBB[K                }[m
+:[K[K [KESCESC[KOO[KBB[K            ],[m
+:[K[K [KESCESC[KOO[KBB[K            "Tags": [],[m
+:[K[K [KESCESC[KOO[KBB[K            "EnableTerminationProtection": false,[m
+:[K[K [KESCESC[KOO[KBB[K            "DriftInformation": {[m
+:[K[K [KESCESC[KOO[KBB[K                "StackDriftStatus": "NOT_CHECKED"[m
+:[K[K [KESCESC[KOO[KBB[K            },[m
+:[K[K [KESCESC[KOO[KBB[K            "LastOperations": [[m
+:[K[K [KESCESC[KOO[KBB[K                {[m
+:[K[K [KESCESC[KOO[KBB[K                    "OperationType": "UPDATE_STACK",[m
+:[K[K [KESCESC[KOO[KBB[K                    "OperationId": "70e81283-9e1f-4d45-92ca-82d37d8e3723"[m
+:[K[K [KESCESC[KOO[KBB[K                }[m
+:[K[K [KESCESC[KOO[KBB[K            ][m
+:[K[K [KESCESC[KOO[KBB[K        }[m
+:[K[K [KESCESC[KOO[KBB[K    ][m
+:[K[K [KESCESC[KOO[KBB[K}[m
+[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KAA[K[HM                    "Description": "API Gateway endpoint URL for ${opt:stage} stage for Delete TODO"[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM                    "OutputValue": "https://mpw35g6ad5.execute-api.us-east-1.amazonaws.com/Prod/todos/{id}",[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM                    "OutputKey": "DeleteTodoApi",[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM                {[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM                },[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM                    "Description": "Base URL of API"[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM                    "OutputValue": "https://mpw35g6ad5.execute-api.us-east-1.amazonaws.com/Prod",[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM                    "OutputKey": "BaseUrlApi",[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM                {[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM            "Outputs": [[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM            ],[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM                "CAPABILITY_IAM"[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM            "Capabilities": [[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM            "NotificationARNs": [],[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM            "DisableRollback": false,[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM            "StackStatus": "UPDATE_COMPLETE",[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM            "RollbackConfiguration": {},[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM            "LastUpdatedTime": "2026-06-08T05:23:27.078000+00:00",[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM            "CreationTime": "2026-06-08T02:26:40.024000+00:00",[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM            ],[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM                }[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM                    "ParameterValue": "staging"[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM                    "ParameterKey": "Stage",[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM                {[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM            "Parameters": [[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM            "Description": "todo-list-aws\nApplication TODO-LIST with SAM format\n",[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM            "ChangeSetId": "arn:aws:cloudformation:us-east-1:351390126172:changeSet/samcli-deploy1780896196/f7728d35-b649-411c-a402-fd0a4940cd88",[m
+[37;1H[K:[K[K [KESCESC[KOO[KBB[K                    "Description": "API Gateway endpoint URL for ${opt:stage} stage for Update TODO"[m
+:[K[K [KESCESC[KOO[KBB[K                },[m
+:[K[K [KESCESC[KOO[KBB[K                {[m
+:[K[K [KESCESC[KOO[KAA[K[HM            "Parameters": [[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM            "Description": "todo-list-aws\nApplication TODO-LIST with SAM format\n",[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM            "ChangeSetId": "arn:aws:cloudformation:us-east-1:351390126172:changeSet/samcli-deploy1780896196/f7728d35-b649-411c-a402-fd0a4940cd88",[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM            "StackName": "staging-todo-list-aws",[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM            "StackId": "arn:aws:cloudformation:us-east-1:351390126172:stack/staging-todo-list-aws/7b2a4f10-62e1-11f1-b44f-0e3d476d0fa5",[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM        {[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM    "Stacks": [[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM{[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KBB[K                    "Description": "API Gateway endpoint URL for ${opt:stage} stage for List TODO"[m
+:[K[K [KESCESC[KOO[KBB[K                },[m
+:[K[K [KESCESC[KOO[KBB[K                {[m
+:[K[K [KESCESC[KOO[KBB[K                    "OutputKey": "UpdateTodoApi",[m
+:[K[K [KESCESC[KOO[KBB[K                    "OutputValue": "https://mpw35g6ad5.execute-api.us-east-1.amazonaws.com/Prod/todos/{id}",[m
+:[K[K [KESCESC[KOO[KBB[K                    "Description": "API Gateway endpoint URL for ${opt:stage} stage for Update TODO"[m
+:[K[K [KESCESC[KOO[KBB[K                },[m
+:[K[K [KESCESC[KOO[KBB[K                {[m
+:[K[K [KESCESC[KOO[KBB[K                    "OutputKey": "GetTodoApi",[m
+:[K[K [KESCESC[KOO[KBB[K                    "OutputValue": "https://mpw35g6ad5.execute-api.us-east-1.amazonaws.com/Prod/todos/{id}",[m
+:[K[K [KESCESC[KOO[KBB[K                    "Description": "API Gateway endpoint URL for ${opt:stage} stage for Get TODO"[m
+:[K[K [KESCESC[KOO[KBB[K                },[m
+:[K[K [KESCESC[KOO[KBB[K                {[m
+:[K[K [KESCESC[KOO[KBB[K                    "OutputKey": "CreateTodoApi",[m
+:[K[K [KESCESC[KOO[KBB[K                    "OutputValue": "https://mpw35g6ad5.execute-api.us-east-1.amazonaws.com/Prod/todos/",[m
+:[K[K [KESCESC[KOO[KBB[K                    "Description": "API Gateway endpoint URL for ${opt:stage} stage for Create TODO"[m
+:[K[K [KESCESC[KOO[KBB[K                }[m
+:[K[K [KESCESC[KOO[KBB[K            ],[m
+:[K[K [KESCESC[KOO[KBB[K            "Tags": [],[m
+:[K[K [KESCESC[KOO[KBB[K            "EnableTerminationProtection": false,[m
+:[K[K [KESCESC[KOO[KBB[K            "DriftInformation": {[m
+:[K[K [KESCESC[KOO[KBB[K                "StackDriftStatus": "NOT_CHECKED"[m
+:[K[K [KESCESC[KOO[KBB[K            },[m
+:[K[K [KESCESC[KOO[KBB[K            "LastOperations": [[m
+:[K[K [KESCESC[KOO[KBB[K                {[m
+:[K[K [KESCESC[KOO[KBB[K                    "OperationType": "UPDATE_STACK",[m
+:[K[K [KESCESC[KOO[KBB[K                    "OperationId": "70e81283-9e1f-4d45-92ca-82d37d8e3723"[m
+:[K[K [KESCESC[KOO[KBB[K                }[m
+:[K[K [KESCESC[KOO[KBB[K            ][m
+:[K[K [KESCESC[KOO[KBB[K        }[m
+:[K[K [KESCESC[KOO[KBB[K    ][m
+:[K[K [KESCESC[KOO[KBB[K}[m
+[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KAA[K[HM                    "Description": "API Gateway endpoint URL for ${opt:stage} stage for Delete TODO"[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM                    "OutputValue": "https://mpw35g6ad5.execute-api.us-east-1.amazonaws.com/Prod/todos/{id}",[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM                    "OutputKey": "DeleteTodoApi",[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM                {[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM                },[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM                    "Description": "Base URL of API"[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM                    "OutputValue": "https://mpw35g6ad5.execute-api.us-east-1.amazonaws.com/Prod",[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM                    "OutputKey": "BaseUrlApi",[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM                {[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM            "Outputs": [[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM            ],[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM                "CAPABILITY_IAM"[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM            "Capabilities": [[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM            "NotificationARNs": [],[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM            "DisableRollback": false,[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM            "StackStatus": "UPDATE_COMPLETE",[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM            "RollbackConfiguration": {},[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM            "LastUpdatedTime": "2026-06-08T05:23:27.078000+00:00",[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM            "CreationTime": "2026-06-08T02:26:40.024000+00:00",[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM            ],[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM                }[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM                    "ParameterValue": "staging"[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM                    "ParameterKey": "Stage",[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM                {[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM            "Parameters": [[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM            "Description": "todo-list-aws\nApplication TODO-LIST with SAM format\n",[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM            "ChangeSetId": "arn:aws:cloudformation:us-east-1:351390126172:changeSet/samcli-deploy1780896196/f7728d35-b649-411c-a402-fd0a4940cd88",[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM            "StackName": "staging-todo-list-aws",[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM            "StackId": "arn:aws:cloudformation:us-east-1:351390126172:stack/staging-todo-list-aws/7b2a4f10-62e1-11f1-b44f-0e3d476d0fa5",[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM        {[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM    "Stacks": [[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM{[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KBB[K                    "Description": "API Gateway endpoint URL for ${opt:stage} stage for List TODO"[m
+:[K[K [KESCESC[KOO[KBB[K                },[m
+:[K[K [KESCESC[KOO[KBB[K                {[m
+:[K[K [KESCESC[KOO[KAA[K[HM        {[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM    "Stacks": [[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM{[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KBB[K                    "Description": "API Gateway endpoint URL for ${opt:stage} stage for List TODO"[m
+:[K[K [KESCESC[KOO[KBB[K                },[m
+:[K[K [KESCESC[KOO[KBB[K                {[m
+:[K[K [KESCESC[KOO[KAA[K[HM        {[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM    "Stacks": [[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM{[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KBB[K                    "Description": "API Gateway endpoint URL for ${opt:stage} stage for List TODO"[m
+:[K[K [KESCESC[KOO[KBB[K                },[m
+:[K[K [KESCESC[KOO[KBB[K                {[m
+:[K[K [KESCESC[KOO[KBB[K                    "OutputKey": "UpdateTodoApi",[m
+:[K[K [KESCESC[KOO[KBB[K                    "OutputValue": "https://mpw35g6ad5.execute-api.us-east-1.amazonaws.com/Prod/todos/{id}",[m
+:[K[K [KESCESC[KOO[KBB[K                    "Description": "API Gateway endpoint URL for ${opt:stage} stage for Update TODO"[m
+:[K[K [KESCESC[KOO[KBB[K                },[m
+:[K[K [KESCESC[KOO[KBB[K                {[m
+:[K[K [KESCESC[KOO[KBB[K                    "OutputKey": "GetTodoApi",[m
+:[K[K [KESCESC[KOO[KBB[K                    "OutputValue": "https://mpw35g6ad5.execute-api.us-east-1.amazonaws.com/Prod/todos/{id}",[m
+:[K[K [KESCESC[KOO[KBB[K                    "Description": "API Gateway endpoint URL for ${opt:stage} stage for Get TODO"[m
+:[K[K [KESCESC[KOO[KBB[K                },[m
+:[K[K [KESCESC[KOO[KBB[K                {[m
+:[K[K [KESCESC[KOO[KBB[K                    "OutputKey": "CreateTodoApi",[m
+:[K[K [KESCESC[KOO[KBB[K                    "OutputValue": "https://mpw35g6ad5.execute-api.us-east-1.amazonaws.com/Prod/todos/",[m
+:[K[K [KESCESC[KOO[KBB[K                    "Description": "API Gateway endpoint URL for ${opt:stage} stage for Create TODO"[m
+:[K[K [KESCESC[KOO[KBB[K                }[m
+:[K[K [KESCESC[KOO[KBB[K            ],[m
+:[K[K [KESCESC[KOO[KBB[K            "Tags": [],[m
+:[K[K [KESCESC[KOO[KBB[K            "EnableTerminationProtection": false,[m
+:[K[K [KESCESC[KOO[KBB[K            "DriftInformation": {[m
+:[K[K [KESCESC[KOO[KBB[K                "StackDriftStatus": "NOT_CHECKED"[m
+:[K[K [KESCESC[KOO[KBB[K            },[m
+:[K[K [KESCESC[KOO[KBB[K            "LastOperations": [[m
+:[K[K [KESCESC[KOO[KAA[K[HM                {[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM            "Outputs": [[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM            ],[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM                "CAPABILITY_IAM"[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM            "Capabilities": [[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM            "NotificationARNs": [],[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM            "DisableRollback": false,[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM            "StackStatus": "UPDATE_COMPLETE",[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM            "RollbackConfiguration": {},[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM            "LastUpdatedTime": "2026-06-08T05:23:27.078000+00:00",[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM            "CreationTime": "2026-06-08T02:26:40.024000+00:00",[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM            ],[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM                }[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM                    "ParameterValue": "staging"[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM                    "ParameterKey": "Stage",[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM                {[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM            "Parameters": [[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM            "Description": "todo-list-aws\nApplication TODO-LIST with SAM format\n",[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM            "ChangeSetId": "arn:aws:cloudformation:us-east-1:351390126172:changeSet/samcli-deploy1780896196/f7728d35-b649-411c-a402-fd0a4940cd88",[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM            "StackName": "staging-todo-list-aws",[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM            "StackId": "arn:aws:cloudformation:us-east-1:351390126172:stack/staging-todo-list-aws/7b2a4f10-62e1-11f1-b44f-0e3d476d0fa5",[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM        {[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM    "Stacks": [[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM{[m
+[37;1H[K:[K[K [KESCESC[KOO[KBB[K                    "Description": "API Gateway endpoint URL for ${opt:stage} stage for List TODO"[m
+:[K[K [KESCESC[KOO[KBB[K                },[m
+:[K[K [KESCESC[KOO[KBB[K                {[m
+:[K[K [KESCESC[KOO[KBB[K                    "OutputKey": "UpdateTodoApi",[m
+:[K[K [KESCESC[KOO[KBB[K                    "OutputValue": "https://mpw35g6ad5.execute-api.us-east-1.amazonaws.com/Prod/todos/{id}",[m
+:[K[K [KESCESC[KOO[KBB[K                    "Description": "API Gateway endpoint URL for ${opt:stage} stage for Update TODO"[m
+:[K[K [KESCESC[KOO[KBB[K                },[m
+:[K[K [KESCESC[KOO[KBB[K                {[m
+:[K[K [KESCESC[KOO[KBB[K                    "OutputKey": "GetTodoApi",[m
+:[K[K [KESCESC[KOO[KBB[K                    "OutputValue": "https://mpw35g6ad5.execute-api.us-east-1.amazonaws.com/Prod/todos/{id}",[m
+:[K[K [KESCESC[KOO[KBB[K                    "Description": "API Gateway endpoint URL for ${opt:stage} stage for Get TODO"[m
+:[K[K [KESCESC[KOO[KBB[K                },[m
+:[K[K [KESCESC[KOO[KBB[K                {[m
+:[K[K [KESCESC[KOO[KBB[K                    "OutputKey": "CreateTodoApi",[m
+:[K[K [KESCESC[KOO[KBB[K                    "OutputValue": "https://mpw35g6ad5.execute-api.us-east-1.amazonaws.com/Prod/todos/",[m
+:[K[K [KESCESC[KOO[KBB[K                    "Description": "API Gateway endpoint URL for ${opt:stage} stage for Create TODO"[m
+:[K[K [KESCESC[KOO[KBB[K                }[m
+:[K[K [KESCESC[KOO[KBB[K            ],[m
+:[K[K [KESCESC[KOO[KBB[K            "Tags": [],[m
+:[K[K [KESCESC[KOO[KBB[K            "EnableTerminationProtection": false,[m
+:[K[K [KESCESC[KOO[KBB[K            "DriftInformation": {[m
+:[K[K [KESCESC[KOO[KBB[K                "StackDriftStatus": "NOT_CHECKED"[m
+:[K[K [KESCESC[KOO[KBB[K            },[m
+:[K[K [KESCESC[KOO[KBB[K            "LastOperations": [[m
+:[K[K [KESCESC[KOO[KBB[K                {[m
+:[K[K [KESCESC[KOO[KBB[K                    "OperationType": "UPDATE_STACK",[m
+:[K[K [KESCESC[KOO[KBB[K                    "OperationId": "70e81283-9e1f-4d45-92ca-82d37d8e3723"[m
+:[K[K [KESCESC[KOO[KBB[K                }[m
+:[K[K [KESCESC[KOO[KBB[K            ][m
+:[K[K [KESCESC[KOO[KBB[K        }[m
+:[K[K [KESCESC[KOO[KAA[K[HM                    "OutputKey": "DeleteTodoApi",[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM                {[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM                },[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM                    "Description": "Base URL of API"[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM                    "OutputValue": "https://mpw35g6ad5.execute-api.us-east-1.amazonaws.com/Prod",[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM                    "OutputKey": "BaseUrlApi",[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM                {[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM            "Outputs": [[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM            ],[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM                "CAPABILITY_IAM"[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM            "Capabilities": [[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM            "NotificationARNs": [],[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM            "DisableRollback": false,[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM            "StackStatus": "UPDATE_COMPLETE",[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM            "RollbackConfiguration": {},[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM            "LastUpdatedTime": "2026-06-08T05:23:27.078000+00:00",[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM            "CreationTime": "2026-06-08T02:26:40.024000+00:00",[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM            ],[m
+[37;1H[K:[K[K [KESCESC[KOO[KBB[K                {[m
+:[K[K [KESCESC[KOO[KBB[K                    "OutputKey": "CreateTodoApi",[m
+:[K[K [KESCESC[KOO[KBB[K                    "OutputValue": "https://mpw35g6ad5.execute-api.us-east-1.amazonaws.com/Prod/todos/",[m
+:[K[K [KESCESC[KOO[KAA[K[HM            "LastUpdatedTime": "2026-06-08T05:23:27.078000+00:00",[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM            "CreationTime": "2026-06-08T02:26:40.024000+00:00",[m
+[37;1H[K:[K[K [KESCESC[KOO[KAA[K[HM            ],[m
+[37;1H[K:[K[K [KESCESC[KOO[KBB[K                {[m
+:[K[K [KESCESC[KOO[KBB[K                    "OutputKey": "CreateTodoApi",[m
+:[K[K [KESCESC[KOO[KBB[K                    "OutputValue": "https://mpw35g6ad5.execute-api.us-east-1.amazonaws.com/Prod/todos/",[m
+:[K[K [KESCESC[KOO[KBB[K                    "Description": "API Gateway endpoint URL for ${opt:stage} stage for Create TODO"[m
+:[K[K [KESCESC[KOO[KBB[K                }[m
+:[K[K [KESCESC[KOO[KBB[K            ],[m
+:[K[K [KESCESC[KOO[KBB[K            "Tags": [],[m
+:[K[K [KESCESC[KOO[KBB[K            "EnableTerminationProtection": false,[m
+:[K[K [KESCESC[KOO[KBB[K            "DriftInformation": {[m
+:[K[K [KESCESC[KOO[KBB[K                "StackDriftStatus": "NOT_CHECKED"[m
+:[K[K [KESCESC[KOO[KBB[K            },[m
+:[K[K [KESCESC[KOO[KBB[K            "LastOperations": [[m
+:[K[K [KESCESC[KOO[KBB[K                {[m
+:[K[K [KESCESC[KOO[KBB[K                    "OperationType": "UPDATE_STACK",[m
+:[K[K [KESCESC[KOO[KBB[K                    "OperationId": "70e81283-9e1f-4d45-92ca-82d37d8e3723"[m
+:[K[K [KESCESC[KOO[KBB[K                }[m
+:[K[K [KESCESC[KOO[KBB[K            ][m
+:[K[K [KESCESC[KOO[KBB[K        }[m
+:[K[K [KESCESC[KOO[KBB[K    ][m
+:[K[K [KESCESC[KOO[KBB[K}[m
+[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[K [KESCESC[KOO[KBB[K[K[3m(END)[23m[K[H[J[H                },[m
+                {[m
+                    "OutputKey": "ListTodosApi",[m
+                    "OutputValue": "https://mpw35g6ad5.execute-api.us-east-1.amazonaws.com/Prod/todos",[m
+                    "Description": "API Gateway endpoint URL for ${opt:stage} stage for List TODO"[m
+                },[m
+                {[m
+                    "OutputKey": "UpdateTodoApi",[m
+                    "OutputValue": "https://mpw35g6ad5.execute-api.us-east-1.amazonaws.com/Prod/todos/{id}",[m
+                    "Description": "API Gateway endpoint URL for ${opt:stage} stage for Update TODO"[m
+                },[m
+                {[m
+                    "OutputKey": "GetTodoApi",[m
+                    "OutputValue": "https://mpw35g6ad5.execute-api.us-east-1.amazonaws.com/Prod/todos/{id}",[m
+                    "Description": "API Gateway endpoint URL for ${opt:stage} stage for Get TODO"[m
+                },[m
+                {[m
+                    "OutputKey": "CreateTodoApi",[m
+                    "OutputValue": "https://mpw35g6ad5.execute-api.us-east-1.amazonaws.com/Prod/todos/",[m
+                    "Description": "API Gateway endpoint URL for ${opt:stage} stage for Create TODO"[m
+                }[m
+            ],[m
+            "Tags": [],[m
+            "EnableTerminationProtection": false,[m
+            "DriftInformation": {[m
+                "StackDriftStatus": "NOT_CHECKED"[m
+            },[m
+            "LastOperations": [[m
+                {[m
+                    "OperationType": "UPDATE_STACK",[m
+                    "OperationId": "70e81283-9e1f-4d45-92ca-82d37d8e3723"[m
+                }[m
+            ][m
+        }[m
+    ][m
+}[m
+[3m(END)[23m[K
+[?2004hubuntu@ip-172-31-44-229:~/todo-list-aws$ ^C[?2004l
+[?2004h[?2004l
+
+[?2004hubuntu@ip-172-31-44-229:~/todo-list-aws$ [K [KESCESC[K[?1l>^C[?2004l
+[?2004h[?2004l
+
+[?2004hubuntu@ip-172-31-44-229:~/todo-list-aws$ ^C[?2004l
+[?2004h[?2004l
+
+[?2004hubuntu@ip-172-31-44-229:~/todo-list-aws$ ^C[?2004l
+[?2004h[?2004l
+
+[?2004

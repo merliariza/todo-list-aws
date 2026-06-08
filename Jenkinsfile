@@ -57,17 +57,12 @@ pipeline {
             steps {
                 script {
                     env.BASE_URL = sh(
-                        script: '''
-                        aws cloudformation describe-stacks \
-                            --stack-name staging-todo-list-aws \
-                            --query "Stacks[0].Outputs[?OutputKey=='BaseUrlApi'].OutputValue" \
-                            --output text
-                        ''',
+                        script: "aws cloudformation describe-stacks --stack-name staging-todo-list-aws --query \"Stacks[0].Outputs[?OutputKey=='BaseUrlApi'].OutputValue\" --output text",
                         returnStdout: true
                     ).trim()
+                    echo "BASE_URL capturada: ${env.BASE_URL}"
                 }
                 sh '''
-                export BASE_URL=${BASE_URL}
                 pytest test/integration/todoApiTest.py -v
                 '''
             }
