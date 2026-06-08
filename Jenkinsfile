@@ -5,6 +5,7 @@ pipeline {
     }
     environment {
         BASE_URL = ''
+        VENV_DIR = "${WORKSPACE}/venv"
     }
     stages {
         stage('Get Code') {
@@ -25,7 +26,10 @@ pipeline {
         stage('Install Dependencies') {
             steps {
                 sh '''
-                pip3 install --user flake8 bandit pytest requests
+                sudo apt-get install -y python3-venv python3-full
+                python3 -m venv ${VENV_DIR}
+                ${VENV_DIR}/bin/pip install --upgrade pip
+                ${VENV_DIR}/bin/pip install flake8 bandit pytest requests
                 '''
             }
         }
@@ -33,8 +37,8 @@ pipeline {
             steps {
                 sh '''
                 mkdir -p reports
-                python3 -m flake8 src --tee --output-file reports/flake8-report.txt || true
-                python3 -m bandit -r src -f txt -o reports/bandit-report.txt || true
+                ${VENV_DIR}/bin/flake8 src --tee --output-file reports/flake8-report.txt || true
+                ${VENV_DIR}/bin/bandit -r src -f txt -o reports/bandit-report.txt || true
                 '''
             }
         }
@@ -65,9 +69,8 @@ pipeline {
                     ).trim()
                 }
                 sh '''
-                echo "BASE_URL=${BASE_URL}"
                 export BASE_URL=${BASE_URL}
-                python3 -m pytest test/integration/todoApiTest.py -v
+                ${VENV_DIR}/bin/pytest test/integration/todoApiTest.py -v
                 '''
             }
         }
@@ -87,6 +90,7 @@ pipeline {
     post {
         always {
             archiveArtifacts artifacts: 'reports/*', allowEmptyArchive: true
+            cleanWs()
         }
         success {
             echo 'Pipeline ejecutado correctamente'

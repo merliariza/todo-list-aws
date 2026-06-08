@@ -1,0 +1,85 @@
+Script started on 2026-06-08 05:15:51+00:00 [TERM="screen" TTY="/dev/pts/3" COLUMNS="183" LINES="37"]
+                    env.BASE_URL = sh(
+                        script: '''
+                        aws cloudformation describe-stacks \
+                            --stack-name staging-todo-list-aws \
+                            --query "Stacks[0].Outputs[?OutputKey=='BaseUrlApi'].OutputValue" \
+                            --output text
+                        ''',
+                        returnStdout: true
+                    ).trim()
+                }
+                sh '''
+                export BASE_URL=${BASE_URL}
+                ${VENV_DIR}/bin/pytest test/integration/todoApiTest.py -v
+                '''
+            }
+        }
+        stage('Promote') {
+            steps {
+                sh '''
+                git config user.email "jenkins@local"
+                git config user.name "Jenkins"
+                git fetch origin master
+                git checkout master
+                git merge origin/develop --no-edit
+                git push origin master
+                '''
+            }
+        }
+    }
+    post {
+        always {
+            archiveArtifacts artifacts: 'reports/*', allowEmptyArchive: true
+            cleanWs()
+        }
+        success {
+            echo 'Pipeline ejecutado correctamente'
+        }
+        failure {
+            echo 'Pipeline fallido'
+        }
+    }
+}[?2004hubuntu@ip-172-31-44-229:~/todo-list-aws$                     env.BASE_URL = sh(
+[?2004lbash: syntax error near unexpected token `('
+[?2004hubuntu@ip-172-31-44-229:~/todo-list-aws$                         script: '''
+[?2004l[?2004h>                         aws cloudformation describe-stacks \
+[?2004l[?2004h>                             --stack-name staging-todo-list-aws \
+[?2004l[?2004h>                             --query "Stacks[0].Outputs[?OutputKey=='BaseUrlApi'].OutputValue" \
+[?2004l[?2004h>                             --output text
+[?2004l[?2004h>                         ''',
+[?2004lCommand 'script:' not found, did you mean:
+  command 'script6' from deb ipv6toolkit (2.0+ds.1-2)
+  command 'script' from deb bsdutils (1:2.39.3-9ubuntu6.5)
+Try: sudo apt install <deb name>
+[?2004hubuntu@ip-172-31-44-229:~/todo-list-aws$                         returnStdout: true
+[?2004lreturnStdout:: command not found
+[?2004hubuntu@ip-172-31-44-229:~/todo-list-aws$                     ).trim()
+[?2004lbash: syntax error near unexpected token `)'
+[?2004hubuntu@ip-172-31-44-229:~/todo-list-aws$                 }
+[?2004lbash: syntax error near unexpected token `}'
+[?2004hubuntu@ip-172-31-44-229:~/todo-list-aws$                 sh '''
+[?2004l[?2004h>                 export BASE_URL=${BASE_URL}
+[?2004l[?2004h>                 ${VENV_DIR}/bin/pytest test/integration/todoApiTest.py -v
+[?2004l[?2004h>                 '''
+[?2004lsh: 0: cannot open 
+                export BASE_URL=${BASE_URL}
+                ${VENV_DIR}/bin/pytest test/integration/todoApiTest.py -v
+                : No such file
+[?2004hubuntu@ip-172-31-44-229:~/todo-list-aws$             }
+[?2004lbash: syntax error near unexpected token `}'
+[?2004hubuntu@ip-172-31-44-229:~/todo-list-aws$         }
+[?2004lbash: syntax error near unexpected token `}'
+[?2004hubuntu@ip-172-31-44-229:~/todo-list-aws$         stage('Promote') {
+[?2004lbash: syntax error near unexpected token `'Promote''
+[?2004hubuntu@ip-172-31-44-229:~/todo-list-aws$             steps {
+[?2004lCommand 'steps' not found, did you mean:
+  command 'step' from deb step (4:23.08.4-0ubuntu1)
+  command 'stops' from deb vasttrafik-cli (1.8-1)
+Try: sudo apt install <deb name>
+[?2004hubuntu@ip-172-31-44-229:~/todo-list-aws$                 sh '''
+[?2004l[?2004h>                 git config user.email "jenkins@local"
+[?2004l[?2004h>                 git config user.name "Jenkins"
+[?2004l[?2004h>                 git fetch origin master
+[?2004l[?2004h>                 git checkout master
+
