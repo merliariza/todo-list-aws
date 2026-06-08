@@ -73,14 +73,21 @@ pipeline {
         }
         stage('Promote') {
             steps {
-                sh '''
-                git config user.email "jenkins@local"
-                git config user.name "Jenkins"
-                git fetch origin master
-                git checkout master
-                git merge origin/develop --no-edit
-                git push origin master
-                '''
+                withCredentials([usernamePassword(
+                    credentialsId: 'github-credentials',
+                    usernameVariable: 'GIT_USER',
+                    passwordVariable: 'GIT_TOKEN'
+                )]) {
+                    sh '''
+                    git config user.email "jenkins@local"
+                    git config user.name "Jenkins"
+                    git remote set-url origin https://${GIT_USER}:${GIT_TOKEN}@github.com/merliariza/todo-list-aws.git
+                    git fetch origin master
+                    git checkout master
+                    git merge origin/develop --no-edit
+                    git push origin master
+                    '''
+                }
             }
         }
     }
