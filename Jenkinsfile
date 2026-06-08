@@ -3,12 +3,12 @@ pipeline {
     options {
         timestamps()
     }
-    environment {
-        PATH = "/var/lib/jenkins/.local/bin:/usr/local/bin:/usr/bin:/bin"
-    }
     stages {
         stage('Get Code') {
             agent any
+            environment {
+                PATH = "/var/lib/jenkins/.local/bin:${env.PATH}"
+            }
             steps {
                 checkout([
                     $class: 'GitSCM',
@@ -24,19 +24,15 @@ pipeline {
                 stash name: 'source-code', includes: '**/*'
             }
         }
-        stage('Install Dependencies') {
-            agent { label 'static-agent' }
-            steps {
-                sh '''
-                pip3 install --break-system-packages flake8 bandit pytest requests
-                '''
-            }
-        }
         stage('Static Test') {
             agent { label 'static-agent' }
+            environment {
+                PATH = "/var/lib/jenkins/.local/bin:${env.PATH}"
+            }
             steps {
                 unstash 'source-code'
                 sh '''
+                pip3 install --break-system-packages flake8 bandit
                 mkdir -p reports
                 flake8 src --tee --output-file reports/flake8-report.txt || true
                 bandit -r src -f txt -o reports/bandit-report.txt || true
@@ -46,19 +42,24 @@ pipeline {
         }
         stage('Deploy') {
             agent any
+            environment {
+                PATH = "/var/lib/jenkins/.local/bin:${env.PATH}"
+            }
             steps {
                 unstash 'source-code'
                 script {
+                    sh '''
+                    sam build
+                    sam validate
+                    sam deploy \
+                        --config-env staging \
+                        --no-confirm-changeset \
+                        --no-fail-on-empty-changeset \
+                        --resolve-s3 \
+                        --s3-bucket ""
+                    '''
                     env.BASE_URL = sh(
                         script: '''
-                            sam build
-                            sam validate
-                            sam deploy \
-                                --config-env staging \
-                                --no-confirm-changeset \
-                                --no-fail-on-empty-changeset \
-                                --resolve-s3 \
-                                --s3-bucket ""
                             aws cloudformation describe-stacks \
                                 --stack-name staging-todo-list-aws \
                                 --query 'Stacks[0].Outputs[?OutputKey==`BaseUrlApi`].OutputValue' \
@@ -72,11 +73,12 @@ pipeline {
         }
         stage('Rest Test') {
             agent { label 'test-agent' }
+            environment {
+                PATH = "/var/lib/jenkins/.local/bin:${env.PATH}"
+            }
             steps {
                 unstash 'source-code'
-                sh '''
-                pip3 install --break-system-packages pytest requests
-                '''
+                sh 'pip3 install --break-system-packages pytest requests'
                 withEnv(["BASE_URL=${env.BASE_URL}"]) {
                     sh 'pytest test/integration/todoApiTest.py -v'
                 }
@@ -84,6 +86,9 @@ pipeline {
         }
         stage('Promote') {
             agent any
+            environment {
+                PATH = "/var/lib/jenkins/.local/bin:${env.PATH}"
+            }
             steps {
                 unstash 'source-code'
                 withCredentials([usernamePassword(
@@ -106,7 +111,7 @@ pipeline {
     }
     post {
         always {
-            node('any') {
+            node('built-in') {
                 unstash 'reports'
                 archiveArtifacts artifacts: 'reports/*', allowEmptyArchive: true
             }
