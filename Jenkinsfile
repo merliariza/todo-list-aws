@@ -5,6 +5,11 @@ pipeline {
         timestamps()
     }
 
+    environment {
+        BASE_URL = ''
+        PATH = "$PATH:$HOME/.local/bin"
+    }
+
     stages {
 
         stage('Get Code') {
@@ -24,16 +29,24 @@ pipeline {
             }
         }
 
+        stage('Install Dependencies') {
+            steps {
+                sh '''
+                pip3 install --user flake8 bandit pytest || true
+                '''
+            }
+        }
+
         stage('Static Test') {
             steps {
                 sh '''
                 mkdir -p reports
 
-                ~/.local/bin/flake8 src \
+                flake8 src \
                 --tee \
                 --output-file reports/flake8-report.txt || true
 
-                ~/.local/bin/bandit -r src \
+                bandit -r src \
                 -f txt \
                 -o reports/bandit-report.txt || true
                 '''
@@ -41,7 +54,7 @@ pipeline {
 
             post {
                 always {
-                    archiveArtifacts artifacts: 'reports/*', fingerprint: true
+                    archiveArtifacts artifacts: 'reports/*', allowEmptyArchive: true
                 }
             }
         }
@@ -50,17 +63,11 @@ pipeline {
             steps {
                 sh '''
                 sam build
-                '''
-
-                sh '''
                 sam validate
-                '''
-
-                sh '''
                 sam deploy \
-                --config-env staging \
-                --no-confirm-changeset \
-                --no-fail-on-empty-changeset
+                    --config-env staging \
+                    --no-confirm-changeset \
+                    --no-fail-on-empty-changeset
                 '''
             }
         }
@@ -80,12 +87,8 @@ pipeline {
                 }
 
                 sh '''
-                echo "Base URL encontrada:"
                 echo $BASE_URL
-
-                export BASE_URL=$BASE_URL
-
-                ~/.local/bin/pytest test/integration/todoApiTest.py
+                pytest test/integration/todoApiTest.py
                 '''
             }
         }
@@ -93,6 +96,9 @@ pipeline {
         stage('Promote') {
             steps {
                 sh '''
+                git config user.email "jenkins@local"
+                git config user.name "jenkins"
+
                 git checkout master
                 git pull origin master
                 git merge origin/develop
@@ -112,7 +118,7 @@ pipeline {
         }
 
         always {
-            archiveArtifacts artifacts: 'reports/*', fingerprint: true
+            archiveArtifacts artifacts: 'reports/*', allowEmptyArchive: true
         }
     }
 }
