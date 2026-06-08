@@ -11,7 +11,7 @@ pipeline {
             steps {
                 checkout([
                     $class: 'GitSCM',
-                    branches: [[name: '*/develop']],
+                    branches: [[name: '*/master']],
                     userRemoteConfigs: [[
                         url: 'https://github.com/merliariza/todo-list-aws.git'
                     ]]
@@ -22,29 +22,13 @@ pipeline {
                 '''
             }
         }
-        stage('Install Dependencies') {
-            steps {
-                sh '''
-                pip3 install --break-system-packages flake8 bandit pytest requests
-                '''
-            }
-        }
-        stage('Static Test') {
-            steps {
-                sh '''
-                mkdir -p reports
-                flake8 src --tee --output-file reports/flake8-report.txt || true
-                bandit -r src -f txt -o reports/bandit-report.txt || true
-                '''
-            }
-        }
         stage('Deploy') {
             steps {
                 sh '''
                 sam build
                 sam validate
                 sam deploy \
-                    --config-env staging \
+                    --config-env production \
                     --no-confirm-changeset \
                     --no-fail-on-empty-changeset \
                     --resolve-s3 \
@@ -58,7 +42,7 @@ pipeline {
                     def baseUrl = sh(
                         script: '''
                             aws cloudformation describe-stacks \
-                                --stack-name staging-todo-list-aws \
+                                --stack-name production-todo-list-aws \
                                 --query 'Stacks[0].Outputs[?OutputKey==`BaseUrlApi`].OutputValue' \
                                 --output text
                         ''',
@@ -66,27 +50,8 @@ pipeline {
                     ).trim()
                     echo "BASE_URL capturada: ${baseUrl}"
                     withEnv(["BASE_URL=${baseUrl}"]) {
-                        sh 'pytest test/integration/todoApiTest.py -v'
+                        sh 'pytest test/integration/todoApiTest.py -v -m "readonly"'
                     }
-                }
-            }
-        }
-        stage('Promote') {
-            steps {
-                withCredentials([usernamePassword(
-                    credentialsId: 'github-credentials',
-                    usernameVariable: 'GIT_USER',
-                    passwordVariable: 'GIT_TOKEN'
-                )]) {
-                    sh '''
-                    git config user.email "jenkins@local"
-                    git config user.name "Jenkins"
-                    git remote set-url origin https://${GIT_USER}:${GIT_TOKEN}@github.com/merliariza/todo-list-aws.git
-                    git fetch origin master
-                    git checkout master
-                    git merge origin/develop --no-edit
-                    git push origin master
-                    '''
                 }
             }
         }
