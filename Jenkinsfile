@@ -47,7 +47,9 @@ pipeline {
                 sam deploy \
                     --config-env staging \
                     --no-confirm-changeset \
-                    --no-fail-on-empty-changeset
+                    --no-fail-on-empty-changeset \
+                    --resolve-s3 \
+                    --s3-bucket ""
                 '''
             }
         }
