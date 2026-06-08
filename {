@@ -82,4 +82,36 @@ Try: sudo apt install <deb name>
 [?2004l[?2004h>                 git config user.name "Jenkins"
 [?2004l[?2004h>                 git fetch origin master
 [?2004l[?2004h>                 git checkout master
-
+[?2004l[?2004h>                 git merge origin/develop --no-edit
+[?2004l[?2004h>                 git push origin master
+[?2004l[?2004h>                 '''
+[?2004lsh: 0: cannot open 
+                git config user.email "jenkins@local"
+                git config user.name "Jenkins"
+                git fetch origin master
+                git checkout master
+                git merge origin/develop --no-edit
+                git push origin master
+                : No such file
+[?2004hubuntu@ip-172-31-44-229:~/todo-list-aws$             }
+[?2004lbash: syntax error near unexpected token `}'
+[?2004hubuntu@ip-172-31-44-229:~/todo-list-aws$         }
+[?2004lbash: syntax error near unexpected token `}'
+[?2004hubuntu@ip-172-31-44-229:~/todo-list-aws$     }
+[?2004lbash: syntax error near unexpected token `}'
+[?2004hubuntu@ip-172-31-44-229:~/todo-list-aws$     post {
+[?2004l^C[?2004hubuntu@ip-172-31-44-229:~/todo-list-aws$ ^C[?2004l[?2004h[?2004l
+[?2004hubuntu@ip-172-31-44-229:~/todo-list-aws$ git diffpush origin developll[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cstatus[Kfetch origin[6Pbranchpush origin developclear[Kgit push origin develop[3Pls-remote originconfig --global user.email[1Pnameemail "merliarizaherrera@gmail.com"[18Pname "merliariza"email[K[1Pname[6Ppush origin develop[1Premote show originpush origin developconfig --global user.nameemailname "merliariza"[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kadd .
+[?2004l[?2004hubuntu@ip-172-31-44-229:~/todo-list-aws$ git add .[1Pdiffpush origin developll[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cstatus[Kfetch origin[6Pbranchpush origin developclear[Kgit push origin developclear[Kgit push origin developbranch[Kfetch origin[6Pstatuspull origin developsh[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cdiff[Kadd .[Kgit add .[1Pdiffpush origin developll[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cstatus[Kfetch origin[6Pbranchpush origin developclear[Kgit push origin develop[3Pls-remote originconfig --global user.email[1Pnameemail "merliarizaherrera@gmail.com"[18Pname "merliariza"email[K[1Pname[6Ppush origin develop[1Premote show originconfig --global user.email[1Pname[16Premote -vpush origin developEOF[Khost=github.com[1Pprotocol=httpsgit credential reject <<EOFonfig --global --unset credential.helperremote -v[K[8Pclear[K[K[K[K[Kgit m[Kcommit - [Km #[K""F"i"s"[1P"z" "[1P"[1P"x" "p"y"t"h"o"n" "i"n"s"t"a"ller"
+[?2004lAuto packing the repository in background for optimum performance.
+See "git help gc" for manual housekeeping.
+warning: The last gc run reported the following. Please correct the root cause
+and remove .git/gc.log
+Automatic cleanup will not be performed until the file is removed.
+
+warning: There are too many unreachable loose objects; run 'git prune' to remove them.
+
+[develop 6cfc2eb] Fix python installer
+ 2 files changed, 94 insertions(+), 5 deletions(-)
+ create mode 100644 {
+[?2004hubuntu@i
