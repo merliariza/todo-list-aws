@@ -50,7 +50,7 @@ pipeline {
                     ).trim()
                     echo "BASE_URL capturada: ${baseUrl}"
                     withEnv(["BASE_URL=${baseUrl}"]) {
-                        sh 'pytest test/integration/todoApiTest.py -v -m "readonly"'
+                        sh 'pytest test/integration/todoApiTest.py -v -k "listtodos"'
                     }
                 }
             }
