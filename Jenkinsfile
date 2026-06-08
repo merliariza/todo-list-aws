@@ -4,7 +4,6 @@ pipeline {
         timestamps()
     }
     environment {
-        BASE_URL = ''
         PATH = "/var/lib/jenkins/.local/bin:${env.PATH}"
     }
     stages {
@@ -56,15 +55,20 @@ pipeline {
         stage('Rest Test') {
             steps {
                 script {
-                    env.BASE_URL = sh(
-                        script: "aws cloudformation describe-stacks --stack-name staging-todo-list-aws --query \"Stacks[0].Outputs[?OutputKey=='BaseUrlApi'].OutputValue\" --output text",
+                    def baseUrl = sh(
+                        script: '''
+                            aws cloudformation describe-stacks \
+                                --stack-name staging-todo-list-aws \
+                                --query 'Stacks[0].Outputs[?OutputKey==`BaseUrlApi`].OutputValue' \
+                                --output text
+                        ''',
                         returnStdout: true
                     ).trim()
-                    echo "BASE_URL capturada: ${env.BASE_URL}"
+                    echo "BASE_URL capturada: ${baseUrl}"
+                    withEnv(["BASE_URL=${baseUrl}"]) {
+                        sh 'pytest test/integration/todoApiTest.py -v'
+                    }
                 }
-                sh '''
-                pytest test/integration/todoApiTest.py -v
-                '''
             }
         }
         stage('Promote') {
