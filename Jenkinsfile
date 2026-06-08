@@ -7,7 +7,6 @@ pipeline {
 
     environment {
         BASE_URL = ''
-        PATH = "$PATH:$HOME/.local/bin"
     }
 
     stages {
@@ -32,7 +31,9 @@ pipeline {
         stage('Install Dependencies') {
             steps {
                 sh '''
-                pip3 install --user flake8 bandit pytest || true
+                python3 -m venv venv
+                . venv/bin/activate
+                pip install flake8 bandit pytest
                 '''
             }
         }
@@ -41,14 +42,11 @@ pipeline {
             steps {
                 sh '''
                 mkdir -p reports
+                . venv/bin/activate
 
-                flake8 src \
-                --tee \
-                --output-file reports/flake8-report.txt || true
+                flake8 src --tee --output-file reports/flake8-report.txt || true
 
-                bandit -r src \
-                -f txt \
-                -o reports/bandit-report.txt || true
+                bandit -r src -f txt -o reports/bandit-report.txt || true
                 '''
             }
 
@@ -67,7 +65,8 @@ pipeline {
                 sam deploy \
                     --config-env staging \
                     --no-confirm-changeset \
-                    --no-fail-on-empty-changeset
+                    --no-fail-on-empty-changeset \
+                    --resolve-s3
                 '''
             }
         }
@@ -88,6 +87,7 @@ pipeline {
 
                 sh '''
                 echo $BASE_URL
+                . venv/bin/activate
                 pytest test/integration/todoApiTest.py
                 '''
             }
